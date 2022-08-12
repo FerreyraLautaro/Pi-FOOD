@@ -1,0 +1,53 @@
+.container {
+  background-color: rgba(0, 0, 0, 0.5);
+  margin-left: 0.5rem;
+  margin-top: 2rem;
+  height: 24rem;
+  width: 22rem;
+  border-radius: 1rem;
+  border: 0.08rem solid white;
+  overflow: hidden;
+  color: rgb(255, 255, 255);
+  align-items: center;
+  font-size: 0.9rem;
+  font-family: Cabin;
+  overflow: hidden;
+}
+
+.containerSub{
+  height: auto;
+  width: auto;
+  padding: 5px;
+  display: flex;
+}
+.container:hover{
+background-color: rgba(248, 4, 4, 0.1);
+border: 0.08rem solid rgba(201, 5, 5, 0.3);
+}
+
+.nameRecipe{
+  font-size:large;
+}
+
+.h2 {
+  margin-bottom: 1rem;
+}
+
+.img {
+  height: max-content;
+  width: max-content;
+  margin: auto;
+  border-radius: 1rem;
+  border: 0.08rem solid white;
+  filter: grayscale(1);
+}
+.img:hover{
+  filter: none;
+}
+
+
+
+.h4 {
+  text-decoration: none;
+  line-height: 1%;
+}

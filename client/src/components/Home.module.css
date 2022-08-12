@@ -1,0 +1,85 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  /*min-height: 100vh;
+  min-width: 100vh;*/
+  width: 100%;
+  background-size:cover;
+  /*background-position: center center;*/
+  background-repeat: no-repeat;
+  background-image: url("../images/FondoHome9.jpeg");
+  background-attachment: fixed;
+  padding-top: 15px;
+}
+
+.containerLoader{
+  background-image: url("../images/FondoHome9.jpeg");
+  display: flex;
+  justify-content: center;
+  align-items:center;
+  background-size:cover;
+  background-repeat: no-repeat;
+  /*min-height: 100vh;
+  min-width: 100vh;*/
+  width: 100%;
+  min-height: 100vh;
+}
+
+.imgLeader{
+  width: 450px;
+  height: auto;
+
+  padding: 0px;
+}
+
+.title {
+  font-family: Rochester;
+  font-size: 5rem;
+  margin-bottom: solid 1px black;
+  padding: none;
+  color: rgb(0, 0, 0);
+  -webkit-text-stroke: 1px rgb(126, 119, 119);
+}
+
+
+.select {
+  color: rgb(255, 255, 255);
+  background-color: rgba(0, 0, 0, 0.5);
+  border: 0.1rem solid black;
+  /*border: 0.1rem solid rgb(73, 67, 67);*/
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+  margin-left: 0.2rem;
+  margin-top: 1rem;
+  font-family: Cabin;
+}
+
+.select:hover {
+  background-color: rgb(75, 74, 74);
+  border: 0.1rem solid rgb(75, 74, 74);
+  cursor: pointer;
+}
+
+.select:focus{
+  outline: none;
+  background-color: rgb(75, 74, 74);
+}
+
+/*
+
+.button:hover {
+  background-color: rgb(75, 74, 74);
+  border: 0.1rem solid rgb(75, 74, 74);
+  cursor: pointer;
+}
+*/
+
+.cards {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+
+
