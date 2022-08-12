@@ -7,6 +7,7 @@ import {
   GET_DIETS,
   POST_NEW_RECIPE,
   GET_DETAIL,
+  SWITCH_BUTTON,
 } from "../actions/actions";
 
 const initialState = {
@@ -14,6 +15,7 @@ const initialState = {
   recipes: [],
   detail: [],
   diets: [],
+  button: "home",
 };
 
 function rootReducer(state = initialState, action) {
@@ -23,6 +25,12 @@ function rootReducer(state = initialState, action) {
         ...state,
         recipes: action.payload,
         allRecipes: action.payload,
+      };
+
+    case SWITCH_BUTTON:
+      return {
+        ...state,
+        button: action.payload,
       };
 
     case GET_RECIPES_BY_NAME:

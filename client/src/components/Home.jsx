@@ -7,8 +7,8 @@ import Card from "./Card";
 import Pagination from "./Pagination";
 import styles from './Home.module.css';
 import gif from '../images/GifLoader2Unscreen2.gif'
-
-
+import Nav from './Nav'
+import Footer from "./Footer";
 export default function Home(){
     const dispatch = useDispatch();
     const allRecipes = useSelector((state)=> state.recipes);
@@ -54,9 +54,10 @@ export default function Home(){
 //console.log(currentRecipes)
     return(
         <div>
+            <Nav/>
         { 
             loadState.length > 0 ?
-        <div className = {styles.container}>                 
+            <div className = {styles.container}>                
             <div>            
             <select onChange={e=>handleAbc(e)} className = {styles.select}>
                 <option value='asc'>A to Z</option>
@@ -70,7 +71,7 @@ export default function Home(){
                 <option value='high'>High Score</option>
                 <option value='low'>Low Score</option>                 
             </select>
-
+            <Link to= '/recipe'><button className = {styles.createButton}>Create Recipe</button></Link> 
             <div className = {styles.cards}>                         
                 {currentRecipes?.map((el)=>{
                     return( 
@@ -95,6 +96,7 @@ export default function Home(){
             </Fragment>
         </div>
         }
+        <Footer/>
         </div>
     )
 

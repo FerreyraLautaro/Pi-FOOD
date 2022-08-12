@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { postNewRecipe, getDiets } from '../actions/actions'
 import styles from './CreateRecipe.module.css';
 import gif from '../images/GifLoader2Unscreen2.gif'
+import Nav from './Nav'
 
 function validate (input){
     let error= {};
@@ -88,6 +89,7 @@ export default function CreateRecipe(){
     return(
 
         <div>
+            <Nav/>
         { 
             loadState.length > 0 ?
         <div className = {styles.container}>
