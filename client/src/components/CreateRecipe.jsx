@@ -5,7 +5,9 @@ import { useDispatch, useSelector } from "react-redux";
 import { postNewRecipe, getDiets } from '../actions/actions'
 import styles from './CreateRecipe.module.css';
 import gif from '../images/GifLoader2Unscreen2.gif'
-import Nav from './Nav'
+import NavToHome from './NavToHome'
+import Footer from "./Footer";
+
 
 function validate (input){
     let error= {};
@@ -70,7 +72,7 @@ export default function CreateRecipe(){
 
     function handleSubmit(e){
         e.preventDefault();
-        if(error.name || error.summary || error.score || error.healthLevel || error.steps || error.diets){
+        if(error.name || error.summary || error.score || error.healthLevel || error.steps || error.diets || error.image){
             return alert("Missing parameters")
         }else{
             dispatch(postNewRecipe(input))        
@@ -89,7 +91,7 @@ export default function CreateRecipe(){
     return(
 
         <div>
-            <Nav/>
+            <NavToHome/>
         { 
             loadState.length > 0 ?
         <div className = {styles.container}>
@@ -142,20 +144,22 @@ export default function CreateRecipe(){
                     name='steps'
                     onChange={(e)=> handleChange(e)}/>                    
                 </div>
+                
                 <p className = {styles.subtitles}>Diet Types: </p>
                 <select className = {styles.select} onChange={(e)=> handleSelect(e)}>
                     {diets.map((d, index)=>(<option 
                     key={index}
                     value={d.name}>{d.name}</option>))}
-                </select>                               
+                </select>      
+                <div className = {styles.dietsList}>
                 {input.diets.map(el=>
-                    <div className = {styles.dietsList}>
-                        <p className = {styles.dietList2}>{el}</p>                        
-                        <button onClick={(e)=> handleDelete(e)} className = {styles.buttonDelete}>x</button>
-                    </div>)}                   
                     <div>
+                        <p className = {styles.dietList2}>{el +"  -"}</p>                        
+                    </div>)}   
+                    </div>                         
+                    <div className={styles.divButton}>
+                        <button onClick={(e)=> handleDelete(e)} className = {styles.buttonDelete}>Clear</button>                
                         <button className = {styles.buttonCreate}>Create!</button>          
-                        
 
                     </div>
                 <br />   
@@ -169,6 +173,7 @@ export default function CreateRecipe(){
         </Fragment>
         </div>
         }
+        <Footer/>
         </div>
     )
 }    
