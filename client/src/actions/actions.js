@@ -1,5 +1,6 @@
 import axios from "axios";
 
+const url = "https://pi-food-production.up.railway.app/";
 export const GET_RECIPES = "getRecipes";
 export const GET_RECIPES_BY_NAME = "getRecipesByName";
 export const FILTER_BY_DIET = "filterByDiet";
@@ -19,7 +20,7 @@ export function switchButton(payload) {
 
 export function getRecipes() {
   return async function (dispatch) {
-    var json = await axios.get("http://localhost:3001/recipes");
+    var json = await axios.get(`${url}recipes`);
     console.log(json.data);
     return dispatch({
       type: GET_RECIPES,
@@ -31,7 +32,7 @@ export function getRecipes() {
 export function getRecipesByName(name) {
   return async function (dispatch) {
     try {
-      var json = await axios.get(`http://localhost:3001/recipes?name=${name}`);
+      var json = await axios.get(`${url}recipes?name=${name}`);
       return dispatch({
         type: GET_RECIPES_BY_NAME,
         payload: json.data,
@@ -65,7 +66,7 @@ export function orderByScore(payload) {
 
 export function getDiets() {
   return async function (dispatch) {
-    var json = await axios.get(`http://localhost:3001/types`);
+    var json = await axios.get(`${url}types`);
     return dispatch({
       type: GET_DIETS,
       payload: json.data,
@@ -75,14 +76,14 @@ export function getDiets() {
 
 export function postNewRecipe(payload) {
   return async function (dispatch) {
-    var json = await axios.post("http://localhost:3001/recipe", payload);
+    var json = await axios.post(`${url}recipe`, payload);
     return json;
   };
 }
 
 export function getDetail(id) {
   return async function (dispatch) {
-    var json = await axios.get(`http://localhost:3001/recipes/${id}`);
+    var json = await axios.get(`${url}recipes/${id}`);
     return dispatch({
       type: GET_DETAIL,
       payload: json.data,
