@@ -22,7 +22,10 @@ export default function Detail(){
        
        <div className = {styles.container}> 
            <h1 className = {styles.title}> {detailstate[0].name} </h1>
-           <h5 className = {styles.diets}>Diets: {detailstate[0].diets.map(e =>capitalizeFirstLetter(e) + " - ")}</h5>
+           <h5 className = {styles.diets}>Diets: { typeof(detailstate[0].diets[0]) == "string" ? 
+           detailstate[0].diets.map(e => e + " - ") 
+           : 
+           detailstate[0].diets.map(e => e.name + " - ") } </h5>
            <div className = {styles.innercontainer}>
            <h3 className = {styles.info}>HealthLevel: {detailstate[0].healthLevel}</h3>
            <h3 className = {styles.info}>Score: {parseInt(detailstate[0].healthLevel * 2 / 3 +14)}</h3>

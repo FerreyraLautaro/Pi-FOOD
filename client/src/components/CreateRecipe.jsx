@@ -128,6 +128,15 @@ export default function CreateRecipe(){
                     {error.score && <p className = {styles.error}>{error.score}</p>}
                 </div>
                 <div>
+                    <p className = {styles.subtitles}>Image: </p>
+                    <input className = {styles.inputNumbers} 
+                    type= 'text'
+                    value={input.image}
+                    name='image'
+                    onChange={(e)=> handleChange(e)}/>
+                    {error.image && <p className = {styles.error}>{error.image}</p>}
+                </div>
+                <div>
                     <p className = {styles.subtitles}>Health Level: </p>
                     <input className = {styles.inputNumbers} 
                     type= 'number'

@@ -11,7 +11,7 @@ export default function Card({img, name, diets}){
                 <img className={styles.img}src= {img} alt='img'></img>   
             </div>
             
-            {diets.map(e =><h4 className={styles.h4} style={{ display: "inline" }}>{Object.values(capitalizeFirstLetter(e))} - </h4>)}                          
+            {diets.map(e =><h4 className={styles.h4} style={{ display: "inline" }}>{Object.values(/*capitalizeFirstLetter(e)*/e)} - </h4>)}                          
         </div>
     );
 }
