@@ -21,7 +21,7 @@ export default function Footer(){
             <div className={styles.footerContactos} id="about">
             <a href="https://github.com/FerreyraLautaro" target="_blank"><img src={Git} className={styles.imgFooter} alt="GitHub" /></a>
             <a href='mailto:ferreyralautaro69@gmail.com'><img className={styles.imgFooter} src={Gmail} alt="Mail" /></a>
-            <a href="https://www.linkedin.com/in/lautaro-ferreyra-6713201ba/" target="_blank"><img className={styles.imgFooter} src={linkedIn} alt="linkedIn" /></a>
+            <a href="https://www.linkedin.com/in/lautarof-developer/" target="_blank"><img className={styles.imgFooter} src={linkedIn} alt="linkedIn" /></a>
             <a href="https://api.whatsapp.com/send?phone=3513348627" target="_blank"><img  className={styles.imgFooter} src={Wsp} alt="WhatsApp" /></a>
             </div>
         </div>
