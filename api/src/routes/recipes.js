@@ -3,11 +3,11 @@ const { Router } = require("express");
 const axios = require("axios");
 const { Recipe, Diet } = require("../db");
 const router = Router();
-const { YOUR_API_KEY } = process.env;
+const { YOUR_API_KEY3 } = process.env;
 
 const getApi = async () => {
   const apiUrl = await axios.get(
-    `https://api.spoonacular.com/recipes/complexSearch?number=100&addRecipeInformation=true&apiKey=${YOUR_API_KEY}`
+    `https://api.spoonacular.com/recipes/complexSearch?number=100&addRecipeInformation=true&apiKey=${YOUR_API_KEY3}`
   );
   //console.log(apiUrl.data)
   const apiInfo = await apiUrl.data.results.map((el) => {
