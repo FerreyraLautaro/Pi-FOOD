@@ -1,19 +1,10 @@
 import React from "react";
 import SearchBar from './SearchBar'
-import { Link } from "react-router-dom";
 import styles from './Nav.module.css' 
-const Swal = require('sweetalert2')
+
 
 export default function Nav(){
 
-    function alert(){
-        Swal.fire({
-            title: 'Sorry!!',
-            text: 'Page under construction🛠',
-            icon: 'error',
-            confirmButtonText: 'Done'
-          })
-     }  
 
     return(
         <div className = {styles.container}>
@@ -21,7 +12,7 @@ export default function Nav(){
             <SearchBar/>
                 <div className={styles.contactNav}>
                     <div className={styles.contactButton}>
-                    <button onClick={alert} className={styles.buttonInfo} >About Me</button>
+                    <a href="https://portfolio-dev-ferreyralautaro.vercel.app/" target="_blank"><button className={styles.buttonInfo} >About Me</button></a>
                     <a href="#about"><button className={styles.buttonInfo}>Contact & info</button></a>
                     </div>
                 </div>
